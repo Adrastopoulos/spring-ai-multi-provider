@@ -56,4 +56,4 @@ Not published to Maven Central: add `includeBuild("/path/to/spring-ai-multi-prov
 
 ## License
 
-Apache 2.0.
+MIT
