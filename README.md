@@ -53,7 +53,3 @@ Not published to Maven Central: add `includeBuild("/path/to/spring-ai-multi-prov
 - Provider beans register as `fallback` candidates, so Spring AI's own by-type `ChatModel` injection stays unambiguous while names and qualifiers still resolve.
 - Built on Spring Framework 7's `BeanRegistrar`; registration runs before `@ConfigurationProperties` beans exist, so properties are bound manually with a `Binder`.
 - `OpenAiCompatChatModelCustomizer` hands you Spring AI's `OpenAiChatModel.Builder` unwrapped, for anything the properties don't model.
-
-## License
-
-MIT
