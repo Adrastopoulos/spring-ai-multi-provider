@@ -1,0 +1,27 @@
+openai:
+  compat:
+    providers:
+      # Reserved key: a template, not a provider. No bean is registered for it;
+      # every field here is inherited by the providers below unless overridden.
+      default:
+        timeout: 60s
+        max-retries: 2
+        temperature: 0.7
+
+      # Hosted OpenAI-compatible provider.
+      cerebras:
+        base-url: https://api.cerebras.ai/v1
+        api-key: ${CEREBRAS_API_KEY:not-a-real-key}
+        model: llama-3.3-70b
+
+      # Local llama.cpp / vLLM style server. An explicit empty api-key selects
+      # Spring AI's no-auth mode, which is what local servers usually want.
+      localLlama:
+        base-url: http://localhost:8080/v1
+        api-key: ""
+        model: qwen2.5-7b-instruct
+        temperature: 0.2
+
+logging:
+  level:
+    io.github.adrastopoulos: INFO
